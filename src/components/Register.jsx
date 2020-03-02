@@ -4,15 +4,17 @@ import axios from 'axios';
 
 const Register = () => {
   const formik = useFormik({
-      initialValues: {
+      initialValues: {  
           email: '',
           username: '',
           password1: '',
           password2: '',
       },
       onSubmit: values => {
-          axios.post('https://lambda-mud-test.herokuapp.com/api/registration', values)
+          console.log(values)
+          axios.post('http://localhost:8000/registration/', values)
             .then(res => console.log(res))
+            .catch(err => console.log(err))
       },
   });
   return (
@@ -23,7 +25,7 @@ const Register = () => {
           <input type='email' name='email' onChange={formik.handleChange} value={formik.values.email}></input>
           <label htmlFor='username'>Username</label>
           <input type='text' name='username' onChange={formik.handleChange} value={formik.values.username}></input>
-          <label htmlFor='passwor'>Password</label>
+          <label htmlFor='password'>Password</label>
           <input type='password' name='password1' onChange={formik.handleChange} value={formik.values.password1}></input>
           <label htmlFor='confirm password'>Confirm Password</label>
           <input type='password' name='password2' onChange={formik.handleChange} value={formik.values.password2}></input>

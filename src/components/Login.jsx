@@ -1,8 +1,10 @@
 import React from "react";
 import { useFormik } from 'formik';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 
 const Login = () => {
+  const history = useHistory();
   const formik = useFormik({
       initialValues: {
           username: '',
@@ -11,7 +13,11 @@ const Login = () => {
       onSubmit: values => {
           console.log(values)
           axios.post('http://localhost:8000/login/', values)
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                localStorage.setItem('token', res.data.key)
+                history.push('/welcome')
+            })
             .catch(err => console.log(err))
       },
   });

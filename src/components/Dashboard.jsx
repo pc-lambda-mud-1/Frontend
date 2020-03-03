@@ -6,12 +6,14 @@ import styled from "styled-components";
 import game_image from "../Images/game_image.jpeg";
 
 const Dashboard = () => {
+  const [room, setRoom] = React.useState({})
+  console.log(room)
   return (
     <StyledDiv>
       
       <div>
-        <RoomDetails />
-        <Directions />
+        <RoomDetails room={room} setRoom={setRoom}/>
+        <Directions room={room} setRoom={setRoom}/>
       </div>
       <Map />
     

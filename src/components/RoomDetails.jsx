@@ -3,14 +3,13 @@ import styled from "styled-components";
 import axios from 'axios';
 import { axiosWithToken } from '../utils/axiosWithAuth';
 
-const RoomDetails = () => {
-
-    const [room, setRoom] = React.useState({})
+const RoomDetails = ( { room, setRoom }) => {
 
     React.useEffect(() => {
-        axiosWithToken('efc60d4aec6d9aa461dad04901e68c40eddbeea2')
+        axiosWithToken('53f092959b011f35d6f46c76218b51c8433f1ca9')
             .get('https://lambda-mud-build.herokuapp.com/api/game/init')
             .then(res => {
+                console.log(res.data)
                 setRoom(res.data)
             })
     }, [])
@@ -20,6 +19,7 @@ const RoomDetails = () => {
             <p>Room Details</p>
             <p>Room Title: {room.title}</p>
             <p>Description: {room.description}</p>
+            <p>{room?.error_msg}</p>
         </StyledDiv>
     )
 }

@@ -43,6 +43,7 @@ width: 470px;
 height: 115px;
 border: 5px solid #DF07CA;
 border-radius: 20px;
+margin-top: 60px;
 background-color: black;
 display: flex;
 justify-content: space-between;

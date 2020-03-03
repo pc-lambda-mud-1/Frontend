@@ -1,16 +1,28 @@
-import React from "react";
+import React from 'react';
 import Directions from './Directions';
-// import Map from './Map';
+import Map from './Map';
 import RoomDetails from './RoomDetails';
+import styled from 'styled-components';
+import game_image from "../Images/game_image.jpeg";
 
 const Dashboard = () => {
-    return (
-        <div>
-            {/* <Map /> */}
-            <RoomDetails /> 
-            <Directions />
-        </div>
-    )
-}
+  return (
+    <StyledDiv>
+      <div>
+        <RoomDetails />
+        <Directions />
+      </div>
+      <Map />
+    </StyledDiv>
+  );
+};
+
+const StyledDiv = styled.div`
+  display: flex;
+  padding: 80px;
+  background-image: url(${game_image});
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 export default Dashboard;

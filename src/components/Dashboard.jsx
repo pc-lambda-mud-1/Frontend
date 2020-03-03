@@ -8,11 +8,13 @@ import game_image from "../Images/game_image.jpeg";
 const Dashboard = () => {
   return (
     <StyledDiv>
+      
       <div>
         <RoomDetails />
         <Directions />
       </div>
       <Map />
+    
     </StyledDiv>
   );
 };

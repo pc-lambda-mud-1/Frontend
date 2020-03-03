@@ -21,9 +21,9 @@ class Signup extends Component {
       <div className="form-container">
         <h1>Let's Talk</h1>
         <form onSubmit={this.handleSubmit} className="form">
-          <label htmlFor="email">What is your email?</label>
+          <label htmlFor="email">What is your name?</label>
           <input
-            type="email"
+            type="text"
             name="username"
             onChange={this.handleChange}
             className="input"

@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import ChatMessage from "./ChatMessage";
 import Signup from "./Signup";
+import ChatApp from './ChatApp';
 import { default as Chatkit } from "@pusher/chatkit-server";
 
 const chatkit = new Chatkit({
@@ -61,7 +62,7 @@ class Chat extends Component {
     } else if (this.state.currentView === "signup") {
       view = <Signup onSubmit={this.createUser}/>;
     } else if (this.state.currentView === "chatApp") {
-        view = <h1>The chatapp will go here</h1>
+        view = <ChatApp currentId={this.state.currentId} />
     }
     return <div className="Chat">{view}</div>;
   }

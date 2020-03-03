@@ -12,7 +12,7 @@ const Register = () => {
       },
       onSubmit: values => {
           console.log(values)
-          axios.post('http://localhost:8000/registration/', values)
+          axios.post('https://lambda-mud-build.herokuapp.com/registration/', values)
             .then(res => console.log(res))
             .catch(err => console.log(err))
       },

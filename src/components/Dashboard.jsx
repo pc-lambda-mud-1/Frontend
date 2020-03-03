@@ -1,8 +1,8 @@
-import React from 'react';
-import Directions from './Directions';
-import Map from './Map';
-import RoomDetails from './RoomDetails';
-import styled from 'styled-components';
+import React from "react";
+import Directions from "./Directions";
+import Map from "./Map";
+import RoomDetails from "./RoomDetails";
+import styled from "styled-components";
 import game_image from "../Images/game_image.jpeg";
 
 const Dashboard = () => {
@@ -22,6 +22,7 @@ const StyledDiv = styled.div`
   padding: 80px;
   background-image: url(${game_image});
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 `;
 

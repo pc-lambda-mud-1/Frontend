@@ -19,6 +19,7 @@ const Register = () => {
   values)
       .then( res =>{
         console.log(res.data)
+        localStorage.setItem('token', res.data.key)
         history.push('/dashboard')
       }
       )

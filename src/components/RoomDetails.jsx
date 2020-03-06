@@ -6,7 +6,7 @@ import { axiosWithToken } from '../utils/axiosWithAuth';
 const RoomDetails = ( { room, setRoom }) => {
 
     React.useEffect(() => {
-        axiosWithToken('53f092959b011f35d6f46c76218b51c8433f1ca9')
+        axiosWithToken('1251d1d604f1411d0eeae57ee29e69180e39773b')
             .get('https://lambda-mud-build.herokuapp.com/api/game/init')
             .then(res => {
                 console.log(res.data)

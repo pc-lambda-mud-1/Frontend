@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
-const rooms_test = [{ name: "room1", n_to: 0 }, { name: "room2", n_to: 5 }, { name: "room3", n_to: 0 }];
+import axios from "axios";
 
 function Map() {
+  const [rooms, setRooms] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://lambda-mud-build.herokuapp.com/api/game/rooms")
+      .then(res => setRooms(res.data.rooms));
+  }, []);
+
   return (
     <StyledDiv>
-      <p >This is the map</p>
-    
+      <MapContainer>
+        {rooms.map((el, i) => (
+          <Cell index={i} room={el} />
+        ))}
+      </MapContainer>
     </StyledDiv>
   );
 }
 
-const StyledRooms = styled.div;
+const StyledCell = styled.div`
+  box-sizing: border-box;
+  border: 1px solid white;
+  height: 49px;
+  width: 49px;
+  color: white;
+`;
+
+const Cell = ({ index, room }) => {
+  return <StyledCell onClick={(e) => console.log(room)}>{index}</StyledCell>;
+};
+
+const MapContainer = styled.div`
+  display: flex;
+  height: 500px;
+  width: 500px;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`;
 
 const StyledDiv = styled.div`
   height: 700px;
@@ -21,8 +50,11 @@ const StyledDiv = styled.div`
   border: 5px solid #df07ca;
   border-radius: 20px;
   background: black;
-  font-family: 'Kodchasan', sans-serif;
-  color: #07ABDF;
+  font-family: "Kodchasan", sans-serif;
+  color: #07abdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default Map;

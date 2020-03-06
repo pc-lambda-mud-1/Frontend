@@ -8,6 +8,7 @@ import Onboarding from "./components/Onboarding";
 import { Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute"
 
+
 function App() {
   return (
     <div className="App">

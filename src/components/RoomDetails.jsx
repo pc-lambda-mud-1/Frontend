@@ -30,7 +30,8 @@ width: 470px;
 border: 5px solid #DF07CA;
 border-radius: 20px;
 background: black;
-color: white;
+font-family: 'Kodchasan', sans-serif;
+color: #07ABDF;
 `;
 
 export default RoomDetails

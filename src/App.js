@@ -6,6 +6,7 @@ import Chat from './components/Chat/Chat';
 import { Route } from 'react-router-dom';
 import PrivateRoute from './utils/PrivateRoute';
 import Dashboard from './components/Dashboard';
+import Maze from './components/Maze';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/chat' component={Chat} />
       <PrivateRoute exact path='/welcome' component={Welcome} />
       <Route exact path="/dashboard" component={Dashboard} />
+      <Route path="/maze" component={Maze} />
     </div>
   );
 }

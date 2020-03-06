@@ -4,7 +4,7 @@ import Map from "./Map";
 import RoomDetails from "./RoomDetails";
 import styled from "styled-components";
 import game_image from "../Images/game_image.jpeg";
-import { withRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -29,4 +29,4 @@ const StyledDiv = styled.div`
   background-size: cover;
 `;
 
-export default withRouter(Dashboard);
+export default Dashboard;

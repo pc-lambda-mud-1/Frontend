@@ -10,3 +10,11 @@ export const axiosWithAuth = () => {
     })
 };
 
+export const axiosWithToken = (token) => {
+    return axios.create({
+        headers: {
+            Authorization: `Token ${token}`
+        }
+    })
+};
+

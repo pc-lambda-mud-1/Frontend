@@ -13,7 +13,7 @@ const Login = () => {
       },
       onSubmit: values => {
           console.log(values)
-          axios.post('http://localhost:8000/login/', values)
+          axios.post('https://lambda-mud-build.herokuapp.com/login/', values)
             .then(res => {
                 console.log(res)
                 localStorage.setItem('token', res.data.key)

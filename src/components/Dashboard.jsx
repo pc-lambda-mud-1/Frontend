@@ -6,6 +6,8 @@ import styled from "styled-components";
 import game_image from "../Images/game_image.jpeg";
 
 const Dashboard = () => {
+  const [room, setRoom] = React.useState({})
+  console.log(room)
   return (
     <StyledDiv>
       <StyledHead>
@@ -14,12 +16,11 @@ const Dashboard = () => {
       </StyledHead>
       <StyledMain>
       <div >
-        <RoomDetails />
-        <Directions />
+        <RoomDetails room={room} setRoom={setRoom}/>
+        <Directions room={room} setRoom={setRoom}/>
       </div>
       <Map />
       </StyledMain>
-    
     </StyledDiv>
   );
 };

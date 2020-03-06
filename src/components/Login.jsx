@@ -13,11 +13,11 @@ const Login = () => {
       },
       onSubmit: values => {
           console.log(values)
-          axios.post('https://lambda-mud-build.herokuapp.com/login/', values)
+          axios.post('https://cors-anywhere.herokuapp.com/https://lambda-mud-build.herokuapp.com/login/', values)
             .then(res => {
                 console.log(res)
                 localStorage.setItem('token', res.data.key)
-                history.push('/welcome')
+                history.push('/dashboard')
             })
             .catch(err => console.log(err))
       },

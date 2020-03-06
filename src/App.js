@@ -9,6 +9,7 @@ import Onboarding from "./components/Onboarding";
 import Dashboard from './components/Dashboard';
 import Maze from './components/Maze';
 
+
 function App() {
   return (
     <div className="App">

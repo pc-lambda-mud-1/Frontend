@@ -4,6 +4,7 @@ import Map from "./Map";
 import RoomDetails from "./RoomDetails";
 import styled from "styled-components";
 import game_image from "../Images/game_image.jpeg";
+import { Route } from "react-router-dom";
 
 const Dashboard = () => {
   const [room, setRoom] = React.useState({})

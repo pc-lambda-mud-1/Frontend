@@ -3,8 +3,9 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Welcome from "./components/Welcome";
 import Dashboard from "./components/Dashboard";
-import { Route } from "react-router-dom";
+import { withRouter, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
+
 
 function App() {
   return (
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
